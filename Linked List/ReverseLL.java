@@ -1,10 +1,6 @@
-// Make a Linked List & add the following elements to it : (1, 5, 7, 3 , 8, 2, 3). 
-// Search for the number 7 & display its index.
-
 import java.util.*;
 
-public class LinkedListCol {
-
+public class ReverseLL {
     public static void main(String[] args) {
         LinkedList<Integer> ab = new LinkedList<>();
         ab.add(1);
@@ -24,20 +20,15 @@ public class LinkedListCol {
         System.out.println("null");
         System.out.println();
 
-        // for(int i = 0; i<ab.size(); i++){
-        //     if(ab.get(i)==7){
-        //         System.out.println(i);
-        //     }
+
+        // for(int i = ab.size()-1; i>=0; i--){
+        //     System.out.print(ab.get(i));
+        //     System.out.print("->");
         // }
+        // System.out.println();
 
-        for(int i = ab.size()-1; i>=0; i--){
-            System.out.print(ab.get(i));
-            System.out.print("->");
-        }
-        System.out.println();
-        
-
-
+        Collections.reverse(ab);
+        System.out.println(ab);
     }
     
 }
