@@ -17,10 +17,6 @@ class Student{
     Student(){
 
     }
-
-    // public Student(Student s1) {
-    //     //TODO Auto-generated constructor stub
-    // }
 }
 
 public class OOPS {
