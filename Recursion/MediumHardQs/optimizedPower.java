@@ -1,4 +1,4 @@
-package EasyMediumQ;
+package MediumHardQs;
 
 public class optimizedPower {
 

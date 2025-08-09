@@ -1,3 +1,5 @@
+package EasyMediumQ;
+
 //print numbers n to 1 (Decresing order)
 
 public class printNums {
