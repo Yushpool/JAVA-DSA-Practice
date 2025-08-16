@@ -39,6 +39,8 @@ public class chess {
         String s = scanner.nextLine().trim();
         String result = determineColor(s);
         System.out.println(result);
+
+        scanner.close();
     }
 }
 
