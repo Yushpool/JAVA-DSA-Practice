@@ -53,6 +53,26 @@ public class heightClass {
         return ls + rs + root.data;
     }
 
+    //Diameter of Tree 
+    //Approach 1 O(N^2)
+    public static int diameter(Node root) {
+
+        if(root == null){
+            return 0;
+        }
+
+        int ld = diameter(root.left);
+        int lheight = height(root.left);
+        int rd = diameter(root.right);
+        int rheight = height(root.right);
+
+        int selfDiameter = lheight + rheight + 1;
+
+        return Math.max(selfDiameter, Math.max(ld, rd));
+    
+        
+    }
+
 
 
     public static void main(String[] args) {
@@ -68,5 +88,6 @@ public class heightClass {
         System.out.println(height(root));
         System.out.println(countN(root));
         System.out.println(sumN(root));
+        System.out.println(diameter(root));
     }
 }
