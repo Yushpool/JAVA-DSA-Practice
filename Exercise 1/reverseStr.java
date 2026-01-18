@@ -20,6 +20,8 @@ public class reverseStr {
         Scanner sc =  new Scanner(System.in);
         String str = sc.next();
         reverse(str);
+
+        sc.close();
     }
 
     
