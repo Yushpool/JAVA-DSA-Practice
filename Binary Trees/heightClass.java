@@ -73,6 +73,35 @@ public class heightClass {
         
     }
 
+    public static class info {
+        int height;
+        int diameter;
+
+        info(int height, int diameter) {
+            this.height = height;
+            this.diameter = diameter;
+        }
+    }
+
+    public static info diameter2(Node root){
+        if(root == null){
+            return new info(0,0);
+        }
+
+        info leftinfo = diameter2(root.left);
+        info rightinfo = diameter2(root.right);
+
+        int height = Math.max(leftinfo.height, rightinfo.height) + 1;
+
+        int diam1 = leftinfo.diameter;
+        int diam2 = rightinfo.diameter;
+        int diam3 = leftinfo.height + rightinfo.height + 1;
+
+        int diameter = Math.max(diam3, Math.max(diam1, diam2));
+
+        return new info(height, diameter);
+    }
+
 
 
     public static void main(String[] args) {
@@ -89,5 +118,6 @@ public class heightClass {
         System.out.println(countN(root));
         System.out.println(sumN(root));
         System.out.println(diameter(root));
+        System.out.println(diameter2(root).diameter);
     }
 }
