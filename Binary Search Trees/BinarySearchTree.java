@@ -39,6 +39,24 @@ public class BinarySearchTree {
         inorder(root.right);
     }
 
+    public static boolean searchNode(Node root, int key){
+
+        if(root ==  null){
+            return false;
+        }
+
+        if(root.data == key){
+            return true;
+        } 
+        
+        if(root.data > key){
+           return searchNode(root.left, key);
+        }
+        else {
+            return searchNode(root.right, key);
+        }
+    }
+
     public static void main(String[] args) {
         int [] values = {5, 3,1,4,6,2};
         Node root = null;
@@ -48,6 +66,13 @@ public class BinarySearchTree {
         }
 
         inorder(root);
+        System.out.println();
+
+        if(searchNode(root, 8)){
+            System.out.println("Found");
+        }else{
+            System.out.println("Not Found");
+        }
 
     }
 }
