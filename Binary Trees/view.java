@@ -71,6 +71,17 @@ public class view {
         System.out.println();
     }
 
+    //leftview of tree 
+    public static void preorder(Node root){
+            if(root == null){
+                return;
+            }
+
+            System.out.print(root.data+" ");
+            preorder(root.left);
+            // preorder(root.right);
+        }
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -81,5 +92,6 @@ public class view {
         root.right.right = new Node(7);
 
         topView(root);
+        preorder(root);
     }
 }
