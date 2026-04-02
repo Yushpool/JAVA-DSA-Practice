@@ -56,7 +56,9 @@ public class BinarySearchTree {
             return searchNode(root.right, key);
         }
     }
+    
 
+    // DELETE NODE IN BST
     public static Node delete(Node root, int val){
 
         if(root.data < val){
