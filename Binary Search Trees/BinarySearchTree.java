@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class BinarySearchTree {
 
@@ -95,6 +96,26 @@ public class BinarySearchTree {
             root = root.left;
         }
         return root;
+    }
+
+    public static void findInRange(Node root, int k1, int k2){
+        
+        if(root == null){
+            return;
+        }
+
+        if(root.data <= k1 && root.data >= k2){
+            findInRange(root.left, k1, k2);
+            System.out.print(root.data + " ");
+            findInRange(root.right, k1, k2);
+        }
+
+        if(root.data < k1){
+            findInRange(root.left, k1, k2);
+        }
+        else{
+            findInRange(root.right, k1, k2);
+        }
     }
 
     public static void main(String[] args) {
