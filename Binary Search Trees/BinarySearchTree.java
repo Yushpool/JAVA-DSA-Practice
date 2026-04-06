@@ -104,17 +104,16 @@ public class BinarySearchTree {
             return;
         }
 
-        if(root.data <= k1 && root.data >= k2){
+        if(root.data >= k1 && root.data <= k2){
             findInRange(root.left, k1, k2);
             System.out.print(root.data + " ");
             findInRange(root.right, k1, k2);
         }
-
-        if(root.data < k1){
-            findInRange(root.left, k1, k2);
+        else if(root.data < k1){
+            findInRange(root.right, k1, k2);
         }
         else{
-            findInRange(root.right, k1, k2);
+            findInRange(root.left, k1, k2);
         }
     }
 
@@ -135,8 +134,12 @@ public class BinarySearchTree {
         //     System.out.println("Not Found");
         // }
 
-        delete(root, 1);
-        inorder(root);
+        // delete(root, 1);
+        // inorder(root);
+
+        findInRange(root, 3, 6);
+
+
 
 
     }
